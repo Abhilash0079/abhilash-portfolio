@@ -10,6 +10,9 @@
 html {
     scroll-behavior: smooth;
 }
+html, body{
+    overflow-x:hidden;
+}
 
 body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
@@ -71,6 +74,7 @@ nav a:hover {
     border-radius: 8px;
     cursor: pointer;
     font-size: 18px;
+    position:static;
 }
 .tagline {
     color: #64748b;
@@ -82,7 +86,7 @@ nav a:hover {
 ========================= */
 
 section {
-    padding: 80px 10%;
+    padding: 50px 10%;
 }
 section h2 {
 
@@ -108,14 +112,13 @@ section h2 {
     gap: 50px;
 }
 .hero-text {
-    flex: 1;
-    min-width: 650px;
+    flex: 1.5;
 }
 .hero-text h1 {
-    font-size: clamp(2.8rem, 5vw, 4rem);
+    font-size: clamp(3rem, 5vw, 4.5rem);
     line-height: 1.1;
-    white-space: nowrap;
     margin-bottom: 20px;
+    white-space: nowrap;
 }
 .hero-text h2 {
     color: #2563eb;
@@ -170,6 +173,22 @@ section h2 {
     padding:8px 16px;
     border-radius:20px;
     font-size:0.9rem;
+}
+
+.about-highlights{
+    margin-top:30px;
+    display:flex;
+    justify-content:center;
+    gap:30px;
+    flex-wrap:wrap;
+}
+
+.about-highlights div{
+    background:white;
+    padding:12px 20px;
+    border-radius:10px;
+    box-shadow:0 3px 10px rgba(0,0,0,0.08);
+    font-weight:600;
 }
 /* =========================
    BUTTONS
@@ -386,6 +405,22 @@ footer {
     nav {
         flex-direction: column;
         padding: 15px;
+        flex-wrap:nowrap;
+    }
+
+    .nav-links{
+        display:flex;
+        gap:15px;
+        flex-wrap:wrap;
+        justify-content:center;
+    }
+
+    #theme-toggle{
+        flex-shrink:0;
+        position:fixed;
+        top:15px;
+        right:15px;
+        z-index:1000;
     }
 
     nav ul {
@@ -394,18 +429,37 @@ footer {
         gap: 12px;
     }
 
+    #hero {
+        padding: 60px 5%;
+    }
+
     .hero-content {
         flex-direction: column-reverse;
         text-align: center;
+        gap: 30px;
     }
 
-    .hero-image img {
-        width: 220px;
-        height: 220px;
+    .hero-text {
+        width: 100%;
     }
 
     .hero-text h1 {
-        font-size: 2.2rem;
+        font-size: 2rem;
+        white-space: nowrap;
+    }
+
+    .hero-text h2 {
+        font-size: 1.7rem;
+    }
+
+    .hero-image img {
+        width: 250px;
+        height: 250px;
+    }
+
+    .stats {
+        justify-content: center;
+        gap: 20px;
     }
 
     .hero-buttons {
@@ -413,12 +467,13 @@ footer {
         flex-wrap: wrap;
     }
 
-    section {
-        padding: 60px 8%;
+    .hero-skills {
+        justify-content: center;
     }
 
-    #skills ul {
-        justify-content: center;
+    .hero-subtitle{
+        font-size:0.95rem;
+        line-height:1.6;
     }
 }
 
@@ -438,7 +493,7 @@ footer {
 }
 
 .dark-mode .skill-card,
-.dark-mode .project-card {
+.dark-mode .project-card, .dark-mode .about-div {
 
     background-color: #1e293b;
 
